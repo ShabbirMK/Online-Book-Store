@@ -1,0 +1,70 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Shabbir Khandwala">
+    <title>Home Page</title>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/cover/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+    </style>
+
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/homepage.css') }}">
+
+</head>
+<!-- Another Template: https://codepen.io/divinector/full/wZQVEP -->
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="masthead mb-auto">
+            <div class="inner">
+                <h3 class="masthead-brand">Online Book Store</h3>
+                <nav class="nav nav-masthead justify-content-center">
+
+                    {% if authenticated %}
+                    <a class="nav-link active" href="{{ url_for('logout') }}">Log out</a>
+                    <a class="nav-link active" href="{{ url_for('viewAll') }}">Browse</a>
+
+                    {% else %}
+                    <a class="nav-link active" href="{{ url_for('login') }}">Login</a>
+                    <a class="nav-link active" href="{{ url_for('signup') }}">Register</a>
+                    <a class="nav-link active" href="{{ url_for('viewAll') }}">Browse</a>
+
+                    {% endif %}
+                </nav>
+            </div>
+        </header>
+
+        <main role="main" class="inner cover">
+            <h1 class="cover-heading">Welcome to my Book Store</h1>
+            <p class="lead">Here you can find all the books you will ever want. Believe me, you need not go elsewhere!</p>
+            <p class="lead">
+                <a href="{{ url_for('aboutme') }}" class="btn btn-lg btn-secondary">About me</a>
+            </p>
+        </main>
+        <footer class="mastfoot mt-auto">
+            <div class="inner">
+                <p>By Shabbir Khandwala</p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

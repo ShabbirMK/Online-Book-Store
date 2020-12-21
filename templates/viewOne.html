@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Shabbir Khandwala">
+    <title>View Book - {{ details['title'] }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/viewOne.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="left" style="background-color: #333;">
+            <header>
+                <h1>Online Book Store</h1>
+                <p>Your one-stop solution to all the best of the books out there</p>
+                <p style="font-size: 100%;"><a href="#">facebook</a> &mdash; <a href="#">twitter</a> &mdash; <a href="#">codepen</a></p>
+            </header>
+        </div>
+        <div class="right">
+            <article>
+                <h2 style="font-size: 400%;">{{ details['title'] }}</h2>
+                <h3 style="font-size: 300%;">Written by, {{ details['author'] }}</h3>
+                <h4 class="date" style="font-size: 200%;">Uploaded on {{ details['uploadDate'] }} <span> by {{ details['uploadBy'] }}</span></h4>
+                <hr style="color: black;">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h5>Abstract: </h5>
+                        <p style="overflow-wrap: break-word; font-size: 100%">{{ details['summary'] }}</p>                                            
+                    </div>
+                    <div class="col-md-4">
+                        <img class="img-responsive img-fluid" src="{{ url_for('static', filename='cover/' + details['cover']) }}" width="auto" style="position: sticky; top: 25%;">                
+                    </div>                   
+                </div>
+
+                <a href="{{ url_for('static', filename='pdfs/' + details['book']) }}">Get the book now!</a>
+
+                <div class="tags">
+                    <ul>
+                        <li>{{ details['primary'] }}</li>
+                        <li>{{ details['secondary'] }}</li>
+                    </ul>
+                </div>
+                <hr>
+            </article>
+        </div>
+    </div>
+</body>
+
+</html>

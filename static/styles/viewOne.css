@@ -1,0 +1,162 @@
+* {
+	 margin: 0;
+	 padding: 0;
+}
+ body {
+	 font-family: georgia, serif;
+	 font-weight: 400;
+	 line-height: 1.4;
+	 font-size: 115%;
+	 -webkit-font-smoothing: antialiased;
+	 height: 100%;
+}
+ .wrap {
+	 height: 100%;
+}
+ .left {
+	 position: fixed;
+	 width: 30%;
+	 height: 100%;
+	 min-height: 150px;
+	 float: left;
+	 background-color: #158;
+	 text-align: center;
+	 color: #fff;
+}
+ .left header {
+	 margin-top: 75%;
+}
+ .left h1 {
+	 font-family: verdana, sans-serif;
+}
+ .left p {
+	 font-size: 80%;
+	 color: rgba(255, 255, 255, 0.8);
+}
+ .left a {
+	 color: #fff;
+	 text-decoration: none;
+}
+ .left a:hover {
+	 color: #fff;
+	 border-bottom: 1px solid #eee;
+}
+ .right {
+	 width: 70%;
+	 height: 100%;
+	 float: right;
+	 background-color: #fff;
+}
+ .right article h2 {
+	 font-family: verdana, sans-serif;
+	 margin-bottom: 20px;
+}
+ .right article .date {
+	 text-transform: uppercase;
+	 font-size: 60%;
+	 padding-bottom: 15px;
+}
+ .right article span {
+	 font-style: italic;
+	 color: rgba(0, 0, 0, 0.5);
+}
+ .right article p {
+	 padding: 10px 0 10px 0;
+}
+ .right article img {
+	 padding: 5px;
+}
+ .right .tags {
+	 font-family: verdana, sans-serif;
+	 color: #fff;
+	 text-transform: uppercase;
+	 font-size: 60%;
+}
+ .right .tags li {
+	 background-color: tomato;
+	 text-align: justify;
+	 display: inline-block;
+	 list-style: none;
+	 margin: 5px 5px 0 0;
+	 padding: 5px;
+	 box-shadow: 1px 1px 1px #ad1a00;
+}
+ .right .tags li:hover {
+	 background-color: #555;
+	 box-shadow: 1px 1px 1px #090909;
+	 cursor: default;
+}
+ .float-left {
+	 float: left;
+}
+ .float-right {
+	 float: right;
+}
+ img {
+	 max-width: 100%;
+}
+ a {
+	 color: tomato;
+	 text-decoration: none;
+}
+ a:hover {
+	 color: #ad1a00;
+	 border-bottom: 1px solid #ad1a00;
+}
+ hr {
+	 padding: 0;
+	 border: none;
+	 border-top: medium double #ddd;
+	 color: #ddd;
+	 text-align: center;
+}
+ hr:after {
+	 content: "§";
+	 display: inline-block;
+	 position: relative;
+	 top: -0.7em;
+	 font-size: 1.5em;
+	 padding: 0 0.25em;
+	 background: #fff;
+}
+ footer {
+	 color: rgba(0, 0, 0, 0.5);
+	 text-align: center;
+	 padding-top: 20px;
+}
+ footer p {
+	 font-size: 70%;
+	 padding: 10px;
+}
+ @media screen and (max-width: 768px) {
+	 .left {
+		 float: none;
+		 position: relative !important;
+		 width: 100%;
+		 min-height: 150px;
+	}
+	 .left header {
+		 margin-top: 0;
+		 padding-top: 20px;
+	}
+	 .right {
+		 float: none;
+		 position: relative !important;
+		 width: 100%;
+		 font-size: 95%;
+	}
+}
+ @media screen and (max-width: 480px) {
+	 .right article h2 {
+		 font-size: 105%;
+	}
+	 .right article p {
+		 font-size: 85%;
+	}
+	 .float-left, .float-right {
+		 float: none;
+	}
+	 img {
+		 width: 95%;
+	}
+}
